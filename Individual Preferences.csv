@@ -1,61 +1,183 @@
-Preferred,First Name,Last Name,1st Preference,2nd Preference,3rd Preference,4th Preference,5th Preference,
-,Geri ,Medina,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Monday Dinner,,
-,Gurbani ,Kaur,Saturday Dinner,Friday Evening,Saturday Evening,Sunday Dinner,Friday Dinner,Sunday Breakfast
-,Stepha ,Geheran,Friday Evening,Friday Dinner,Saturday Evening,Saturday Dinner,Tuesday Dinner,Thursday Dinner
-,Joshua ,Himmelfarb,Wednesday Dinner,Monday Dinner,Tuesday Dinner,Thursday Dinner,,
-,Marc,Spellen,Sunday Breakfast,,,,,
-,Benjamin ,Casillas,Friday Evening,Friday Overnight,Saturday Dinner,Saturday Evening,Saturday Overnight,Sunday Breakfast
-,Lucas ,Mitchell,Sunday Evening,Sunday Dinner,Sunday Overnight,Tuesday Dinner,Monday Dinner,Tuesday Evening
-,Katelyn ,Li,Thursday Evening,Wednesday Evening,Tuesday Evening,,,
-,Mary Katherine ,DeWane,Saturday Breakfast,Tuesday Evening,Wednesday Evening,Thursday Evening,Friday Breakfast,Saturday Dinner
-,Hannah ,Gibson,Thursday Dinner,Friday Dinner,,,,
-,Janey ,Zitomer,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Tuesday Evening,Wednesday Evening,Monday Evening
-,Emily ,Valentin,Wednesday Evening,Wednesday Breakfast,Friday Breakfast,Sunday Evening,Monday Breakfast,Saturday Breakfast
-,Anran ,Li,Sunday Dinner,Saturday Dinner,Thursday Dinner,Wednesday Dinner,Monday Dinner,Tuesday Dinner
-,Graceanne ,Sexton,Tuesday Evening,Wednesday Evening,Tuesday Dinner,Wednesday Dinner,Saturday Overnight,Friday Overnight
-,Frank, Zhu,Saturday Overnight,Friday Overnight,Saturday Dinner,Sunday Dinner,Friday Dinner,Saturday Evening
-,Paige ,Anderson,Wednesday Dinner,Thursday Dinner,Friday Evening,,,
-,Duong, Doan,Saturday Overnight,Saturday Dinner,Sunday Dinner,Friday Dinner,Friday Evening,Sunday Overnight
-,Jenny ,Xie,Sunday Dinner,Sunday Evening,,,,
-,Connie ,Chao,Friday Breakfast,Thursday Overnight,Sunday Dinner,Monday Breakfast,,
-,Deepika ,Kurup,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Monday Dinner,Tuesday Evening,Wednesday Evening
-,Justine ,Hsu,Sunday Dinner,Saturday Dinner,Saturday Evening,Friday Evening,Friday Overnight,Saturday Overnight
-,Sydney ,Kuo,Monday Dinner,Wednesday Dinner,Thursday Dinner,Tuesday Dinner,Friday Evening,Sunday Evening
-,Sianna ,Casey,Sunday Dinner,Tuesday Dinner,,,,
-,Marie,Tan,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Friday Dinner,Monday Evening
-,Eva ,Montgomery-Morrison,Monday Dinner,Tuesday Dinner,Monday Overnight,Sunday Overnight,Sunday Dinner,Monday Evening
-,Tariq ,Muhammad,Friday Overnight,Saturday Overnight,Sunday Overnight,Monday Overnight,Tuesday Overnight,Wednesday Overnight
-,Mauranda ,Men,Tuesday Breakfast,Monday Breakfast,Wednesday Breakfast,,,
-,Elize ,Oliverio,Wednesday Dinner,Tuesday Dinner,Thursday Dinner,Monday Dinner,,
-,Stephanie ,Strifert,Monday Dinner,Wednesday Dinner,Thursday Dinner,,,
-,Ginger ,Ren,Sunday Breakfast,Thursday Dinner,Wednesday Breakfast,Saturday Dinner,Sunday Breakfast,Sunday Dinner
-,Andrea ,Bejar,Friday Evening,Friday Overnight,Saturday Dinner,Saturday Evening,Saturday Overnight,Sunday Breakfast
-,Eric ,Miller,Tuesday Evening,Thursday Evening,Monday Evening,Tuesday Overnight,Thursday Overnight,Wednesday Overnight
-,Michael ,McIntosh,Saturday Breakfast,Saturday Dinner,Saturday Evening,Sunday Breakfast,Sunday Dinner,Saturday Overnight
-,Isabel ,Bernhard,Monday Breakfast,Tuesday Breakfast,Wednesday Breakfast,Thursday Breakfast,Friday Breakfast,Sunday Breakfast
-,William ,Nesmith,Thursday Evening,Wednesday Evening,Tuesday Evening,Monday Evening,,
-,Lily ,Sun,Tuesday Dinner,Wednesday Dinner,,,,
-,Holly ,Bourque,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Sunday Dinner,Saturday Dinner
-,Teresa ,Chen,Saturday Breakfast,Sunday Breakfast,Friday Dinner,Saturday Dinner,Sunday Dinner,Thursday Dinner
-,Martin ,Heavey,Monday Evening,Tuesday Evening,Wednesday Evening,Monday Dinner,Tuesday Dinner,Wednesday Dinner
-,Nicholas ,Grundlingh,Tuesday Dinner,Wednesday Dinner,Monday Dinner,Tuesday Evening,Wednesday Evening,Monday Evening
-,Samantha ,Neville,Sunday Dinner,Saturday Evening,Thursday Dinner,Tuesday Dinner,Wednesday Dinner,
-,Jessica ,Lin,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Friday Dinner,Tuesday Evening
-,Natasha ,Dhamankar,Sunday Dinner,,,,,
-,Erica ,Kim,Friday Dinner,Friday Evening,Saturday Dinner,Saturday Evening,Saturday Breakfast,Sunday Breakfast
-,Rachel ,Sadoff,Tuesday Evening,Tuesday Breakfast,,,,
-,Diane ,Ah-Kine,Tuesday Dinner,,,,,
-,Samantha ,Cheng,Thursday Dinner,Wednesday Dinner,Tuesday Dinner,Monday Dinner,Sunday Dinner,Saturday Dinner
-,Se Yun (Scarlett) ,Cheon,Thursday Dinner,Wednesday Dinner,Tuesday Dinner,Monday Dinner,,
-,Lauren ,Futami,Saturday Overnight,Friday Overnight,Saturday Dinner,Saturday Evening,,
-,Vicki ,Nguyen,Thursday Evening,Friday Breakfast,Saturday Breakfast,Thursday Overnight,Sunday Breakfast,Sunday Dinner
-,Bridget ,Power,Tuesday Dinner,Wednesday Dinner,,,,
-,Cathy ,Zhang,Saturday Breakfast,Sunday Breakfast,Tuesday Dinner,Thursday Dinner,Friday Dinner,Saturday Dinner
-,Payal ,Nanda,Thursday Dinner,Wednesday Dinner,Tuesday Dinner,,,
-,Morgan ,Buchanan,Monday Evening,Wednesday Evening,Tuesday Evening,Thursday Evening,Friday Evening,Saturday Evening
-,Skylar ,Karzhevsky,Monday Dinner,Wednesday Dinner,Monday Evening,Sunday Dinner,Sunday Evening,Sunday Breakfast
-,Hannah ,Hubbard,Sunday Breakfast,Sunday Dinner,,,,
-,Marinda ,Horan,Monday Evening,Tuesday Evening,Wednesday Evening,Thursday Dinner,Sunday Dinner,Sunday Evening
-,Maura ,Poling,Friday Breakfast,Wednesday Dinner,Monday Dinner,,,
-,Tu ,Pham,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,,
-,Lydia,Winn,Sunday Dinner,Thursday Dinner,Friday Dinner,Friday Evening,Sunday Breakfast,
+Preferred Applicants,First Name,Last Name,1st Preference,2nd Preference,3rd Preference,4th Preference,5th Preference
+,Jessica,Kim,Friday Dinner,Saturday Dinner,Thursday Dinner,Thursday Evening,Friday Evening
+,Bilal,Nadeem,Sunday Breakfast,Tuesday Breakfast,Thursday Breakfast,Saturday Dinner,Tuesday Evening
+,Camilla,Suarez,Thursday Dinner,Friday Dinner,Saturday Breakfast,,
+TRUE,Jason,Dong,Saturday Evening,Wednesday Breakfast,Thursday Breakfast,,
+TRUE,Daniel,Letchford,Saturday Dinner,Wednesday Breakfast,Thursday Breakfast,,
+,Sarah,Schewe,Thursday Dinner,Wednesday Dinner,Friday Dinner,Tuesday Dinner,Monday Dinner
+,Mary,Finlayson,Monday Breakfast,Tuesday Breakfast,Sunday Evening,Sunday Overnight,Monday Overnight
+TRUE,Michael,Liu,Friday Dinner,,,,
+,Emily,Jung,Monday Breakfast,Saturday Breakfast,Wednesday Breakfast,Thursday Breakfast,Tuesday Breakfast
+,Ruby,Almanza,Wednesday Breakfast,Tuesday Breakfast,,,
+TRUE,Vivian,yu,Saturday Dinner,Saturday Evening,Friday Evening,Sunday Evening,
+,Katie,Blanton,Monday Evening,Tuesday Evening,Sunday Evening,Wednesday Evening,Tuesday Dinner
+TRUE,Gabrielle,Tartakovsky,Wednesday Breakfast,Monday Breakfast,,,
+TRUE,Christine,Gosioco,Wednesday Breakfast,Monday Breakfast,,,
+TRUE,Ha Ryong (Michael),Jung,Friday Evening,,,,
+,Claire,Rushin,Thursday Dinner,Thursday Evening,Saturday Breakfast,,
+TRUE,Stephanie,Ying,Tuesday Dinner,Monday Dinner,Wednesday Dinner,Monday Breakfast,Tuesday Evening
+TRUE,Marcus,Powers,Thursday Breakfast,Wednesday Breakfast,Monday Breakfast,Friday Breakfast,Tuesday Breakfast
+TRUE,Jarele,Soyinka,Monday Overnight,Tuesday Overnight,Wednesday Overnight,Thursday Overnight,Thursday Breakfast
+,sara,graham,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Friday Dinner
+,David,Hu,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Saturday Dinner,Friday Dinner
+TRUE,Lucy,Costa,Friday Evening,Saturday Evening,Sunday Evening,Monday Evening,Wednesday Evening
+,Sadie,McQuilkin,Monday Dinner,Thursday Dinner,Tuesday Dinner,Wednesday Dinner,Friday Dinner
+,Caroline,Diggins,Thursday Breakfast,,,,
+,Emmah,Wabuke,Saturday Evening,Friday Evening,Sunday Breakfast,Friday Dinner,Saturday Overnight
+,Bethlehem,Lulseged,Friday Breakfast,Monday Breakfast,Tuesday Breakfast,Thursday Breakfast,Wednesday Breakfast
+,Fadi,Hamati,Thursday Evening,Thursday Dinner,Thursday Overnight,,
+,Kayla,Measell,Monday Dinner,Tuesday Dinner,Wednesday Dinner,,
+,Julia,Gallogly,Tuesday Dinner,Thursday Dinner,Monday Dinner,Friday Dinner,Sunday Breakfast
+,livio,valenti,Monday Breakfast,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Evening
+,Menapace,Samantha,Tuesday Dinner,Monday Evening,Thursday Breakfast,Thursday Dinner,Friday Dinner
+,Naomi,Arsenault,Friday Dinner,Saturday Dinner,Saturday Breakfast,Saturday Evening,
+TRUE,Alison,Gurley,Monday Breakfast,Tuesday Breakfast,Monday Dinner,,
+TRUE,Adiba,Manning,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,Friday Dinner
+,Pristine,Mei,Saturday Evening,Sunday Breakfast,Monday Evening,Tuesday Evening,Wednesday Evening
+TRUE,xue,dong,Tuesday Evening,Sunday Overnight,Saturday Evening,Thursday Evening,Sunday Evening
+,Amitai,Abouzaglo,Monday Evening,Tuesday Evening,Wednesday Overnight,Tuesday Dinner,Monday Dinner
+,Mathilde,Ribordy,Tuesday Breakfast,Monday Dinner,Friday Dinner,Saturday Dinner,
+,Rose,Payva,Friday Dinner,Wednesday Dinner,Monday Dinner,Wednesday Breakfast,Monday Breakfast
+TRUE,Naomi,Asimow,Tuesday Breakfast,Monday Breakfast,Friday Breakfast,Thursday Breakfast,Wednesday Breakfast
+TRUE,Geetika,Mehra,Tuesday Dinner,Monday Dinner,Wednesday Dinner,,
+,Oliver,Piltch,Tuesday Dinner,Wednesday Dinner,Friday Dinner,Thursday Dinner,Tuesday Breakfast
+TRUE,Nicole,Sturgis,Thursday Breakfast,Tuesday Breakfast,Monday Dinner,Thursday Dinner,Saturday Breakfast
+,Michelle,Vaccaro,Friday Dinner,Thursday Dinner,Wednesday Dinner,,
+TRUE,Will,Long,Wednesday Dinner,,,,
+,Sarah,Coady,Wednesday Dinner,Thursday Dinner,Friday Dinner,Thursday Evening,Friday Evening
+,Catarina,Do,Thursday Dinner,Friday Dinner,Friday Evening,Monday Dinner,Monday Evening
+,Bobby,Malley,Sunday Evening,Tuesday Breakfast,Friday Breakfast,Thursday Evening,Thursday Breakfast
+,Rory,Wakeford,Sunday Evening,Saturday Dinner,Monday Dinner,Monday Breakfast,Wednesday Breakfast
+,Mary,Buswell,Monday Evening,Wednesday Evening,Thursday Evening,Monday Dinner,Wednesday Dinner
+,Keye,Tersmette,Monday Breakfast,Monday Dinner,Tuesday Breakfast,Wednesday Dinner,Thursday Breakfast
+,Ilia,Gelfat,Tuesday Breakfast,Thursday Breakfast,Monday Evening,Wednesday Evening,Monday Dinner
+,Matthew,Whipple,Tuesday Dinner,Thursday Dinner,Wednesday Evening,Thursday Evening,Tuesday Evening
+,Susie,Van Blaricum,Sunday Evening,Friday Dinner,,,
+TRUE,John,Nolan,Friday Breakfast,Monday Evening,Tuesday Evening,Monday Dinner,Tuesday Dinner
+TRUE,Luisa,Masclans,Saturday Breakfast,Friday Breakfast,Sunday Breakfast,,
+,Kyra,Colbert,Monday Breakfast,Tuesday Breakfast,Wednesday Breakfast,Thursday Breakfast,Friday Breakfast
+,Thomas,Bernhardt-Lanier,Thursday Dinner,Saturday Dinner,,,
+,Anca,Bunda,Monday Dinner,Tuesday Dinner,Thursday Dinner,Monday Evening,Tuesday Evening
+TRUE,Kaitlyn,Rabinovitz,Monday Evening,Wednesday Evening,Monday Dinner,Thursday Dinner,Wednesday Evening
+TRUE,Shilpa,Tummala,Monday Dinner,Monday Evening,Saturday Breakfast,Tuesday Breakfast,Thursday Breakfast
+TRUE,Melinda,Song,Tuesday Breakfast,Wednesday Breakfast,Thursday Breakfast,,
+,Emily,Bosworth,Thursday Breakfast,Thursday Dinner,Wednesday Dinner,Tuesday Dinner,Wednesday Evening
+TRUE,Emily,Brother,Saturday Breakfast,Sunday Breakfast,,,
+,Cameron,Nieters,Monday Dinner,,,,
+,Phoebe,Whitwell,Wednesday Overnight,Thursday Overnight,Monday Overnight,Wednesday Dinner,Thursday Dinner
+,Samantha,Pelletier,Thursday Dinner,Thursday Evening,Wednesday Dinner,Wednesday Evening,Friday Dinner
+,Michael,Holachek,Friday Dinner,Tuesday Dinner,Monday Breakfast,Tuesday Breakfast,Saturday Evening
+,Awnit Singh,Marta,Saturday Dinner,Friday Evening,Saturday Evening,Sunday Breakfast,Thursday Breakfast
+,Amanda Maria,Gomez,Tuesday Evening,Wednesday Evening,Wednesday Dinner,Tuesday Dinner,Thursday Dinner
+,Michal,Turkiewicz,Thursday Breakfast,Friday Breakfast,,,
+TRUE,Gabriel,Barnett,Thursday Dinner,Thursday Dinner,Thursday Dinner,Thursday Dinner,Thursday Dinner
+TRUE,Adrian,Fanucci-Kiss,Thursday Dinner,Wednesday Dinner,Thursday Evening,Monday Dinner,Tuesday Dinner
+TRUE,Maxine,Patwardhan,Thursday Dinner,Thursday Evening,Monday Evening,Wednesday Dinner,Wednesday Evening
+,Olivia,Blanchard,Monday Evening,Tuesday Evening,Wednesday Evening,Thursday Evening,Sunday Evening
+,Sarah,Stevens,Tuesday Dinner,Monday Breakfast,Wednesday Breakfast,Friday Breakfast,Saturday Dinner
+,Joanne,Dynak,Monday Dinner,Monday Evening,Tuesday Dinner,Tuesday Evening,Wednesday Evening
+TRUE,Tyler,Love,Sunday Evening,Friday Dinner,Saturday Dinner,Thursday Breakfast,Friday Breakfast
+,Wanqian,Yang,Sunday Overnight,Sunday Evening,Saturday Dinner,Saturday Evening,
+,Alexa,Brown,Monday Evening,Friday Evening,Friday Overnight,Sunday Overnight,Saturday Dinner
+,Theodore,Motzkin,Monday Evening,Monday Dinner,Tuesday Evening,Tuesday Dinner,
+,Nada,Attia,Tuesday Dinner,Saturday Dinner,Friday Dinner,Sunday Dinner,
+,Shiyin,ZHENG,Thursday Overnight,Tuesday Overnight,Sunday Overnight,Wednesday Breakfast,
+,Julia,Shea,Sunday Dinner,Thursday Dinner,Sunday Breakfast,Thursday Overnight,
+TRUE,Caroline,Morris,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,,
+,Rewan,Abdelwahab,Thursday Dinner,Friday Breakfast,Saturday Breakfast,Sunday Breakfast,
+,Sabrina,Bell,Wednesday Dinner,Wednesday Evening,Monday Evening,Monday Dinner,Thursday Dinner
+,Francesca,Hess,Sunday Overnight,Monday Overnight,Thursday Evening,Wednesday Evening,
+,Sharon,Lu,Monday Dinner,Monday Evening,Saturday Breakfast,Thursday Dinner,Thursday Evening
+,Bridget,Keegan,Monday Evening,Sunday Evening,Saturday Evening,Tuesday Evening,
+,Samantha,White,Monday Dinner,Thursday Breakfast,,,
+,Natalie,Swartz,Monday Dinner,Monday Evening,Tuesday Dinner,Tuesday Evening,
+,Jeremy,TSai,Tuesday Dinner,Wednesday Dinner,Thursday Dinner,,
+TRUE,Amy,Zhao,Friday Evening,Friday Dinner,Monday Evening,Monday Dinner,
+,Sarita,Damaraju,Friday Dinner,Tuesday Breakfast,Thursday Breakfast,Wednesday Dinner,Tuesday Dinner
+,Ethan,Kahn,Thursday Dinner,Tuesday Dinner,Wednesday Dinner,Friday Dinner,Sunday Dinner
+,Ari,Berman,Tuesday Dinner,Tuesday Evening,Saturday Dinner,Saturday Evening,Thursday Evening
+,Wai Yin (Debbie),Chan,Saturday Breakfast,Saturday Dinner,Friday Breakfast,Friday Dinner,Sunday Breakfast
+,Ali,Rahman,Tuesday Breakfast,Monday Breakfast,Wednesday Breakfast,Thursday Breakfast,
+,Jaelithe,Virgin-Downey,Saturday Breakfast,Friday Breakfast,,,
+,Justin,Nguyen,Saturday Overnight,,,,
+,Aileen,Navarrete,Friday Breakfast,Friday Dinner,Saturday Breakfast,Monday Dinner,Sunday Breakfast
+,Jenna,Wong,Friday Dinner,Saturday Dinner,Sunday Evening,Friday Evening,Saturday Evening
+,Majo,Acosta,Friday Overnight,Saturday Dinner,Saturday Evening,Saturday Overnight,
+,Elijah,Ezeji-Okoye,Monday Breakfast,Tuesday Breakfast,Friday Breakfast,Wednesday Breakfast,Thursday Breakfast
+,Riya,Sood,Thursday Dinner,Tuesday Dinner,,,
+,Hyun Jin,Kim,Sunday Breakfast,Saturday Breakfast,Friday Breakfast,Tuesday Breakfast,
+,Nicholas,Ortiz,Wednesday Evening,Wednesday Dinner,Thursday Dinner,Tuesday Evening,Monday Evening
+,Emma,Ton,Thursday Dinner,Friday Overnight,Saturday Overnight,Saturday Breakfast,Saturday Dinner
+,Micaela,Rosen,Thursday Dinner,Wednesday Dinner,,,
+,Nicholas,Grundlingh,Tuesday Dinner,Wednesday Dinner,,,
+,Mary,Wan,Saturday Evening,Saturday Dinner,Sunday Evening,Friday Overnight,Friday Evening
+,Morgan,Spaulding,Monday Breakfast,Sunday Breakfast,Thursday Breakfast,Wednesday Breakfast,Tuesday Breakfast
+,Raymond,Hu,Sunday Evening,Saturday Breakfast,Saturday Dinner,Thursday Evening,Monday Evening
+TRUE,Elizabeth,D'Haiti,Tuesday Dinner,Wednesday Breakfast,Friday Overnight,Saturday Dinner,Sunday Breakfast
+TRUE,Alejandro,Gracia-Zhang,Wednesday Breakfast,Thursday Overnight,Friday Overnight,Saturday Overnight,Sunday Breakfast
+,Eagon,Meng,Tuesday Evening,Thursday Evening,Monday Evening,Wednesday Evening,
+,Mariah,Dimalaluan,Sunday Breakfast,Saturday Breakfast,Wednesday Dinner,Thursday Dinner,Tuesday Breakfast
+TRUE,Rachel,Sadoff,Tuesday Breakfast,Thursday Breakfast,Saturday Breakfast,Sunday Breakfast,
+TRUE,Christian,Cordova-Pedroza,Thursday Dinner,,,,
+,Hakeem,Angulu,Sunday Breakfast,Monday Dinner,Monday Breakfast,Thursday Dinner,Thursday Breakfast
+,Jonathan,Huh,Saturday Breakfast,Friday Dinner,Tuesday Breakfast,Sunday Breakfast,Monday Dinner
+TRUE,Jenna,Friedel,Wednesday Evening,Saturday Dinner,Sunday Dinner,,
+,Julie,Park,Monday Dinner,Wednesday Dinner,Saturday Breakfast,Monday Evening,Tuesday Evening
+,Lindsay,Overhage,Monday Dinner,Tuesday Dinner,Wednesday Dinner,Saturday Breakfast,Sunday Breakfast
+,Colleen,Tapen,Friday Dinner,Saturday Breakfast,Saturday Dinner,Sunday Breakfast,Thursday Dinner
+,Peng,Yin,Friday Dinner,Saturday Dinner,Thursday Dinner,Saturday Dinner,
+,Lavinia,Mitroi,Saturday Breakfast,Friday Dinner,Friday Evening,Sunday Breakfast,
+TRUE,Grace,Evans,Tuesday Overnight,Monday Overnight,Sunday Overnight,Wednesday Breakfast,Monday Breakfast
+TRUE,Madeline,Dorroh,Tuesday Evening,Thursday Evening,Friday Evening,Friday Dinner,
+TRUE,Stephen,Gleason,Tuesday Dinner,,,,
+TRUE,Cory,Ransom,Monday Breakfast,Tuesday Breakfast,Thursday Breakfast,,
+TRUE,Lucas,Conti,Thursday Evening,Thursday Overnight,Thursday Dinner,Wednesday Breakfast,
+TRUE,Molly,Richmond,Wednesday Breakfast,Thursday Breakfast,,,
+,Eily,Sullivan,Monday Breakfast,Wednesday Breakfast,Tuesday Breakfast,Thursday Breakfast,Monday Evening
+,Arash,Ghassemi,Monday Overnight,Wednesday Overnight,,,
+TRUE,Christian,Bailey-Burke,Saturday Dinner,,,,
+TRUE,Theo,Lebryk,Friday Dinner,Saturday Dinner,Tuesday Dinner,Friday Evening,Saturday Evening
+TRUE,Rachel,Granetz,Thursday Dinner,Monday Dinner,Tuesday Dinner,Thursday Evening,Monday Evening
+,Chinyere,Ejim,Friday Evening,Saturday Evening,,,
+TRUE,Faheem,Zaman,Saturday Overnight,,,,
+TRUE,Nefyn,Meissner,Friday Overnight,Saturday Overnight,Thursday Overnight,Friday Breakfast,Thursday Breakfast
+TRUE,Jina,John,Monday Dinner,Tuesday Dinner,,,
+,Molly,Levene,Monday Dinner,Tuesday Dinner,Thursday Dinner,Monday Evening,Tuesday Evening
+TRUE,Savannah,Miles,Thursday Dinner,Thursday Evening,Sunday Evening,Thursday Overnight,Sunday Overnight
+TRUE,Camille,Traslavina,Wednesday Evening,Sunday Evening,Sunday Overnight,Thursday Evening,Thursday Overnight
+TRUE,Shayn,Lozano,Sunday Breakfast,Saturday Breakfast,,,
+TRUE,Madhavi,Narayanan,Thursday Breakfast,Tuesday Breakfast,Wednesday Overnight,Monday Overnight,
+TRUE,Rina,Perrault,Wednesday Evening,,,,
+TRUE,Andy,Taylor,Wednesday Evening,,,,
+TRUE,Meg,McCarty,Wednesday Evening,,,,
+TRUE,Isabel,Parkey,Monday Evening,Tuesday Evening,Monday Dinner,Wednesday Evening,Thursday Evening
+TRUE,Bethsaida,Cardona,Friday Dinner,Thursday Dinner,Saturday Dinner,,
+TRUE,Curtis,Hsu,Wednesday Evening,Monday Evening,Tuesday Evening,Thursday Evening,Sunday Evening
+TRUE,Ajay,Singh,Saturday Evening,Friday Evening,,,
+,Bailey,Werner,Thursday Dinner,,,,
+,Jade,Woo,Saturday Evening,Saturday Dinner,Saturday Breakfast,Sunday Breakfast,Friday Dinner
+TRUE,Jackie,Ebert,Wednesday Dinner,Wednesday Evening,Thursday Dinner,Monday Evening,Monday Dinner
+,Victoria,Scott,Thursday Evening,Friday Breakfast,Thursday Overnight,Friday Dinner,Friday Breakfast
+,Ted,Zhu,Sunday Evening,Wednesday Evening,Monday Evening,,
+TRUE,Meg,Knister,Monday Dinner,Monday Evening,Tuesday Dinner,Tuesday Evening,Friday Breakfast
+,Joshua,Himmelfarb,Thursday Dinner,Monday Dinner,Tuesday Dinner,Friday Dinner,Saturday Dinner
+TRUE,Michelle,Odonkor,Friday Breakfast,Wednesday Breakfast,Thursday Breakfast,Thursday Dinner,Tuesday Evening
+,Jonathan,Wang,Thursday Evening,Thursday Dinner,Wednesday Evening,Wednesday Dinner,
+TRUE,Jillian,Dukes,Wednesday Dinner,Wednesday Evening,Tuesday Dinner,Tuesday Evening,
+,Esther,Wong,Wednesday Evening,Thursday Evening,Tuesday Evening,Wednesday Dinner,Thursday Dinner
+TRUE,Olivia,Velasquez,Thursday Breakfast,Friday Breakfast,Wednesday Breakfast,Monday Breakfast,Tuesday Breakfast
+,Katharine,Bodnar,Monday Evening,Tuesday Dinner,Wednesday Breakfast,Monday Breakfast,
+TRUE,Xavier,Gonzalez,Saturday Evening,Friday Evening,,,
+,Karen,Andres,Thursday Breakfast,Tuesday Breakfast,Saturday Dinner,Sunday Breakfast,Friday Overnight
+TRUE,Tauheed,Islam,Friday Overnight,Saturday Dinner,Saturday Evening,Monday Evening,Monday Dinner
+,Erin,Kim,Thursday Overnight,Thursday Dinner,Wednesday Dinner,,
+TRUE,Kevon,Edmondson,Thursday Dinner,Thursday Breakfast,Friday Breakfast,,
+TRUE,Sarah,Angell,Monday Dinner,Monday Evening,Wednesday Dinner,Wednesday Evening,Thursday Dinner
+TRUE,Alan,Wong,Saturday Breakfast,Saturday Dinner,Friday Dinner,Monday Dinner,
+TRUE,Lizzy,Thomas,Monday Dinner,Tuesday Breakfast,,,
+TRUE,Terresa,Eun,Wednesday Evening,Monday Evening,,,
+TRUE,Sue,Wang,Monday Dinner,Monday Evening,Wednesday Evening,,
+TRUE,Kainoa,McCauley,Thursday Evening,,,,
+TRUE,Ericardo,Edwards,Monday Evening,Tuesday Evening,Monday Dinner,,
+TRUE,Camille,DeSisto,Thursday Evening,,,Tuesday Dinner,Tuesday Evening
+,Alexis,Ross,Wednesday Evening,Thursday Breakfast,Thursday Evening,Tuesday Evening,Thursday Dinner
