@@ -6,7 +6,7 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
 2.  Sign in via LinkedIn, GitHub, or Google.
 3.  Clone this repository from GitHub.
     - Click the **Git** icon in the top banner of the screen.
-    - In the **Git Clone URL** field, copy the following URL: https://github.com/gdowdy3/Y2Y-Scheduling.git.
+    - In the **Git Clone URL** field, copy the following URL: https://github.com/gdowdy3/Y2Y-Scheduling.git
     - Press the [Tab] key and the other two fields should be populated automatically with **Branch: master** and **JuliaBox Folder: Y2Y-Scheduling**.
     - Click the "+" symbol to the right of the now filled fields.
     - Wait for confirmation of a successful "Git Operation".
