@@ -20,9 +20,10 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
       - "Shift Focused Output.csv"
       - "Volunteer Focused Output.csv"
     - Save these files to your computer.
-      - Check the boxes next to each file.
+      - Check the box next to the first file.
       - Click the **Download** button that appears above when you do so.
-      - Save them to a convenient location.
+      - Save it to a convenient location.
+      - Repeat for the second file.
    - Open the files using Excel and manipulate them as you see fit (e.g., resizing and renaming columns).
    
    
