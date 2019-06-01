@@ -31,6 +31,7 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
 To use the code with your own input data, you just need to provide your own "Individual Preferences.csv" and "Prefilled  Shifts.csv" files.  To do so:
 1. Using Excel, create your own "Individual Preferences.csv" and "Prefilled  Shifts.csv" files, using the provided files as examples for the required format of the data.
    - These files must be named exactly "Individual Preferences.csv" and "Prefilled  Shifts.csv"!
+   - Their formatting must be exactly the same as the provided sample files!
 2. In JuliaBox, navigate to the Y2Y-Scheduling folder.
 3. Click the **Upload** button in the top right corner of the screen.
 4. In the pop-up window, find and select the first file you want to upload, and click the **Open** button.
