@@ -17,6 +17,15 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
     - Click on the **Y2Y-Scheduling** folder.
     - Click on the **Y2Y Shift Assignment.ipnyb** file.  It should open in a new tab in your browser.
     - Follow the instructions there.
+    - If you see a "Dead Kernel" error message, do the following:
+        - Navigate back to the **Dashboard**.
+        - Click on the **Packages** button.
+        - Click on the **Yours** tab.
+        - Click the yellow **Reset** button.
+        - Return to the browser tab containing the code.
+        - Click on **Kernel** in the options bar at the top of the screen.
+        - In the drop-down menu, click **Restart Kernel & Clear All**.
+        - Try again to run the code.
 6. Inspect the output.
     - If the code ran successfully, it should have produced two files in the Y2Y-Scheduling Folder:
       - "Shift Focused Output.csv"
