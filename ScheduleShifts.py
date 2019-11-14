@@ -12,7 +12,37 @@ class Volunteer():
         self.FirstName = ''
         self.LastName = ''
         self.IsPreferredVolunteer = False
-        self.ShiftPreferences = []
+        self.PreferredShifts = []
+        self.ShiftPreferencePoints = {}
+
+    def CalculateShiftPreferencePoints(self, Shifts):
+
+        # Instantiate the dictionary of shift preference points
+        self.ShiftPreferencePoints = {}
+
+        # Initialize a point value of zero for each shift
+        for s in Shifts:
+            self.ShiftPreferencePoints[s] = 0
+
+        # Assign preference points for each of the volunteer's preferred shifts
+        for s in Shifts:
+            
+            # Check if the current shift is in the volunteer's list of preferred shifts
+            if not s in self.PreferredShifts:  # then it's not there
+
+                # Assign 0 preference points to this shift for this volunteer
+                self.ShiftPreferencePoints[s] = 0
+
+            else: # the shift *is* in the volunteer's list of preferred shifts
+
+                # Find the position of the shift in the list
+                Index = self.PreferredShifts.index(s)
+
+                # Find the length of the list
+                ListLength = len(self.PreferredShifts)
+
+                # Calculate the number of points corresponding to this index
+                self.ShiftPreferencePoints[s] = ListLength - Index  # Index = 0 ==> max points,  Index = Max Index ==> 1 point
 
 class VolunteerGroup():
     # This class describes volunteer groups
@@ -23,11 +53,18 @@ class VolunteerGroup():
         self.AssignedShift = ''
 
 class Shift():
-    # This class describes volunteer groups
+    # This class describes shifts
 
     def __init__(self):
         self.ShiftName = ''
         self.RequiredVolunteers = 0
+
+class Period():
+    # This class describes periods
+
+    def __init__(self, Name, RequiredVolunteers):
+        self.Name = Name
+        self.RequiredVolunteers = RequiredVolunteers
         
 def ReadInIndividualVolunteerData():
     # This function reads the preferences into a data frame
@@ -47,12 +84,14 @@ def ReadInIndividualVolunteerData():
         # Instantiate a new volunteer
         v = Volunteer()
     
-        # Populate the volunteer's properties
+        # Assign an ID Number to the volunteer
         v.ID_Number = len(Volunteers)
+        
+        # Read in most of the volunteer's properties
         v.FirstName = Row['First Name']
         v.LastName = Row['Last Name']
         v.IsPreferredVolunteer = Row['Preferred Applicants']
-        v.ShiftPreferences = [
+        v.PreferredShifts = [
             Row['1st Preference'],
             Row['2nd Preference'],
             Row['3rd Preference'],
@@ -95,8 +134,8 @@ def ReadInGroupVolunteerData():
     # Return the list of volunteer groups
     return VolunteerGroups
 
-def BuildShiftList():
-    # This function builds a list of shift objects
+def BuildShiftDictionary():
+    # This function builds a dictionary of shift objects, where the dictionary keys are the shift names
     
     # Specify the days of the week
     Weekdays = [
@@ -109,31 +148,31 @@ def BuildShiftList():
         'Saturday'
     ]
 
-    # Specify the time periods
+    # Create the list of periods
     Periods = [
-        'Breakfast',
-        'Dinner',
-        'Evening',
-        'Overnight'
+        Period(Name='Breakfast', RequiredVolunteers=4),
+        Period(Name='Dinner', RequiredVolunteers=3),
+        Period(Name='Evening', RequiredVolunteers=5),
+        Period(Name='Overnight', RequiredVolunteers=2),
     ]
 
-    # Initialize the list of shifts
-    Shifts = []
+    # Initialize the dictionary of shifts
+    Shifts = {}
     for w in Weekdays:
         for p in Periods:
 
             # Construct the shift name corresponding to this weekday and period
-            ShiftName = '%s %s' % (w, p)
+            ShiftName = '%s %s' % (w, p.Name)
 
             # Instantiate a new shift object
             s = Shift()
 
             # Add the shift's properties
             s.ShiftName = ShiftName
-            s.RequiredVolunteers = 5
+            s.RequiredVolunteers = p.RequiredVolunteers
 
-            # Add the shift to the growing list of shifts
-            Shifts.append(s)
+            # Add the shift to the growing dictionary of shifts
+            Shifts[ShiftName] = s
 
     # Return the list of shifts
     return Shifts
@@ -142,7 +181,7 @@ def BuildModel(IndividualVolunteers, Shifts):
     # This function builds the constraint programming model for the problem
     # Inputs:
     #   IndividualVolunteers = a list of volunteer objects.
-    #   Shifts = a list of shift objects.
+    #   Shifts = a dictionary of shift objects, indexed by shift names
     # Outputs:
     #   model = a CP model object populated with decision variables, constraints, and an objective.
 
@@ -153,13 +192,13 @@ def BuildModel(IndividualVolunteers, Shifts):
     Assignment = {}
     for v in IndividualVolunteers:
         for s in Shifts:
-            Assignment[(v,s)] = model.NewBoolVar('Volunteer %s assigned to %s shift' % (v.ID_Number,s.ShiftName))
+            Assignment[(v,s)] = model.NewBoolVar('Volunteer %s assigned to %s shift' % (v.ID_Number,s))
 
     # Create the constraints
     ## Each shift has at most 5 volunteers assigned to it
     for s in Shifts:
         model.Add(
-            sum(Assignment[(v,s)] for v in IndividualVolunteers) <= 5
+            sum(Assignment[(v,s)] for v in IndividualVolunteers) <= Shifts[s].RequiredVolunteers
         )
 
     ## Each volunteer is assigned to at most one shift
@@ -171,17 +210,38 @@ def BuildModel(IndividualVolunteers, Shifts):
     ## Each volunteer can only be assigned to the one of the shifts they indicated in their preference list
     for v in IndividualVolunteers:
         for s in Shifts:
-            if not s.ShiftName in v.ShiftPreferences:
+            if not s in v.PreferredShifts:
                 model.Add(
                     Assignment[(v,s)] == 0
                 )
 
     # Set the objective
-    ## Maximize the number of covered shifts
+    ## Define the weights of the various objectives
+    Weight = {
+        'Maximize the number of covered shifts' : 1,
+        'Respect the volunteer preferences' : 1,
+    }
+
+    ## Define the objective
     model.Maximize(
+
+        # Maximize the number of covered shifts
+        Weight['Maximize the number of covered shifts'] *
         sum(
             sum(
                 Assignment[(v,s)] for v in IndividualVolunteers
+            )
+            for s in Shifts
+        )
+
+        +
+
+        # Maximize the number of realized shift preference points
+        Weight['Respect the volunteer preferences'] *
+        sum(
+            sum(
+                Assignment[(v,s)] * v.ShiftPreferencePoints[s]
+                for v in IndividualVolunteers
             )
             for s in Shifts
         )
@@ -200,7 +260,7 @@ def PrintShiftAssignments(solver, Assignment):
     for s in Shifts:
 
         # Print the name of the shift
-        print(s.ShiftName)
+        print(s)
 
         for v in IndividualVolunteers:
 
@@ -209,14 +269,18 @@ def PrintShiftAssignments(solver, Assignment):
                 # Print the volunteer's first and last name
                 print('\t' + v.FirstName, v.LastName)
 
+# Build the list of shifts
+Shifts = BuildShiftDictionary()
+
 # Read in the individual volunteer data
 IndividualVolunteers = ReadInIndividualVolunteerData()
 
 # Read in the volunteer group data
 GroupVolunteers = ReadInGroupVolunteerData()
 
-# Build the list of shifts
-Shifts = BuildShiftList()
+# Calculate the number of preference points each volunteer associates with each shift
+for v in IndividualVolunteers:
+    v.CalculateShiftPreferencePoints(Shifts)
 
 # Build the constraint programming model
 (model, Assignment) = BuildModel(IndividualVolunteers, Shifts)   # "Assignment" is a dictionary mapping (volunteer, shift) tuples to binary assignment decision variables
