@@ -250,11 +250,12 @@ def BuildModel(IndividualVolunteers, Shifts):
     # Return the model
     return (model, Assignment)
 
-def PrintShiftAssignments(solver, Assignment):
+def PrintShiftAssignments(solver, Assignment, Shifts):
     # This function prints out a shift-centric view of the shift assignments
     # Inputs:
     #   solver = the CP solver object, which has already solved the model.
     #   Assignment = a dictionary mapping (volunteer, shift) tuples to binary assignment decision variables
+    #   Shifts = a dictionary of Shift objects
     
     # Loop over the shifts
     for s in Shifts:
@@ -268,6 +269,198 @@ def PrintShiftAssignments(solver, Assignment):
 
                 # Print the volunteer's first and last name
                 print('\t' + v.FirstName, v.LastName)
+
+def PrintSummaryStatistics(solver, Assignment, Shifts):
+    # This function prints out several statistics summarizing the quality of the shift assignment found by the optimizer
+    # Inputs:
+    #   solver = the CP solver object, which has already solved the model.
+    #   Assignment = a dictionary mapping (volunteer, shift) tuples to binary assignment decision variables
+    #   Shifts = a dictionary of Shift objects
+
+    # Calculate the fraction of the staffing requirements that have been fulfilled
+    ## Initialize the count of desired assignments
+    AssignmentsRequired = 0
+
+    ## Initialize the count of assignments realized
+    AssignmentsRealized = 0
+
+    ## Initialize the count of under-staffed shifts
+    UnderStaffedShifts = 0
+
+    ## Loop over the shifts
+    for s in Shifts:
+
+        # Increment the staffing requirements
+        AssignmentsRequired += Shifts[s].RequiredVolunteers
+
+        # Initialize the count of volunteers assigned to this shift
+        AssignmentsForShift = 0
+
+        # Loop over each of the volunteers
+        for v in IndividualVolunteers:
+
+            # Check if they were assigned to the current shift
+            if solver.Value(Assignment[(v,s)]) == 1:  # They were assigned to the current shfit
+
+                # Increment the count of assignments realized
+                AssignmentsRealized += 1
+
+                # Increment the count of assignments for this particular shift
+                AssignmentsForShift += 1
+
+        # Check if this shift is under-staffed
+        if AssignmentsForShift < Shifts[s].RequiredVolunteers: # this shift is under-staffed
+
+            # Increment the count of under-staffed shifts
+            UnderStaffedShifts += 1
+
+    ## Calculate the fraction of required assignments that were realized
+    FractionOfRequirementsRealized = AssignmentsRealized / AssignmentsRequired
+
+    ## Calculate the fraction of under-staffed shifts
+    FractionOfUnderStaffedShifts = UnderStaffedShifts / len(Shifts)
+
+    ## Print the results
+    print('\nStaffing requirements covered: %1.1f%%.' % (FractionOfRequirementsRealized * 100))
+
+    print('Shifts fully covered: %1.1f%%.' % ((1- FractionOfUnderStaffedShifts) * 100))
+
+
+def ExportVolunteerFocusedSchedule(solver, Assignment, Shifts):
+    # This function exports a shift-centric CSV of the shift assignments
+    # Inputs:
+    #   solver = the CP solver object, which has already solved the model.
+    #   Assignment = a dictionary mapping (volunteer, shift) tuples to binary assignment decision variables
+    #   Shifts = a dictionary of Shift objects
+
+    # Import the necessary libraries
+    import csv
+    import sys
+
+    # Specify the name of the file to be exported
+    FileName = 'Volunteer-Focused Schedule.csv'
+
+    # Create the file
+    with open(FileName, mode='w') as f:
+
+        # Instantiate the csv writer
+        if 'win' in sys.platform:  # Check for windows
+            Writer = csv.writer(f, delimiter=',', lineterminator = '\n')
+        else:
+            Writer = csv.writer(f, delimiter=',')
+
+        # Add the header line
+        ## Intialize the header line
+        HeaderLine = ['Volunteer', 'Assignment']
+
+        ## Write the header line to the csv
+        Writer.writerow(HeaderLine)
+
+        # Add the line for each volunteer
+        for v in IndividualVolunteers:
+
+            # Initialize the line with the volunteer's first and last name
+            Line = [ '%s %s' % (v.FirstName, v.LastName) ]
+
+            # Initialize the flag indicating whether or not an assignment has been found
+            AssignmentFound = False
+
+            # Loop over each shift
+            for s in Shifts:
+
+                # Check if the volunteer was assigned to the current shift
+                if solver.Value(Assignment[(v,s)]) == 1:  # They were assigned to the current shfit
+
+                    # Print the shift's name
+                    Line.append( '%s' % s )
+
+                    # Raise the flag indicating that an assignment has been found
+                    AssignmentFound = True
+
+            # Check if an assignment was found
+            if AssignmentFound == False:
+
+                # Print a message indicating that no assignement was found
+                Line.append( 'Unassigned' )
+
+            # Write out the line for the current volunteer
+            Writer.writerow(Line)
+
+def ExportShiftFocusedSchedule(solver, Assignment, Shifts):
+    # This function exports a shift-centric CSV of the shift assignments
+    # Inputs:
+    #   solver = the CP solver object, which has already solved the model.
+    #   Assignment = a dictionary mapping (volunteer, shift) tuples to binary assignment decision variables
+    #   Shifts = a dictionary of Shift objects
+
+    # Import the necessary libraries
+    import csv
+    import sys
+
+    # Specify the name of the file to be exported
+    FileName = 'Shift-Focused Schedule.csv'
+
+    # Create the file
+    with open(FileName, mode='w') as f:
+
+        # Instantiate the csv writer
+        if 'win' in sys.platform:  # Check for windows
+            Writer = csv.writer(f, delimiter=',', lineterminator = '\n')
+        else:
+            Writer = csv.writer(f, delimiter=',')
+
+        # Construct the header line
+        ## Intialize the header line
+        HeaderLine = ['Shift']
+
+        ## Calculate the maximum number of volunteers required in any given shift
+        MaxVolunteersPerShift = max( [s.RequiredVolunteers for s in Shifts.values()] )
+ 
+        ## Add a column for each possible volunteer
+        for v in range(1, MaxVolunteersPerShift + 1):
+
+            # Add the header for the vth volunteer
+            HeaderLine.append( 'Volunteer %s' % str(v) )
+
+        ## Add a column for notes
+        HeaderLine.append( 'Notes' )
+
+        ## Write the header line to the csv
+        Writer.writerow(HeaderLine)
+
+        # Add the line for each shift
+        for s in Shifts:
+
+            # Initialize the line with the name of the shift
+            Line = [s]
+
+            # Initialize the count of volunteers assigned to this shift
+            VolunteersAssigned = 0
+
+            # Loop over the volunteers
+            for v in IndividualVolunteers:
+
+                # Check if they were assigned to the current shift
+                if solver.Value(Assignment[(v,s)]) == 1:  # They were assigned to the current shfit
+
+                    # Print the volunteer's first and last name
+                    Line.append( '%s %s' % (v.FirstName, v.LastName) )
+
+                    # Increment the count of volunteers assigned
+                    VolunteersAssigned += 1
+
+            # Check for under-staffing
+            if VolunteersAssigned < Shifts[s].RequiredVolunteers: # this is an under-staffed shift
+
+                # Add the appropriate number of empty strings
+                for _ in range(MaxVolunteersPerShift - VolunteersAssigned):
+                    Line.append(' ')
+
+                # Add the warning about under-staffing
+                Line.append('Warning: this shift is under-staffed.')
+
+            # Write out the line for the current shift
+            Writer.writerow(Line)
 
 # Build the list of shifts
 Shifts = BuildShiftDictionary()
@@ -290,7 +483,12 @@ solver = cp_model.CpSolver()
 solver.Solve(model)
     
 # Print out the results
-PrintShiftAssignments(solver, Assignment)
+PrintShiftAssignments(solver, Assignment, Shifts)
+PrintSummaryStatistics(solver, Assignment, Shifts)
+
+# Write the results to a CSV file
+ExportShiftFocusedSchedule(solver, Assignment, Shifts)
+ExportVolunteerFocusedSchedule(solver, Assignment, Shifts)
 
 
 
