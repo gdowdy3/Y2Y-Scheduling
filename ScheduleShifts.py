@@ -44,6 +44,12 @@ class Volunteer():
                 # Calculate the number of points corresponding to this index
                 self.ShiftPreferencePoints[s] = ListLength - Index  # Index = 0 ==> max points,  Index = Max Index ==> 1 point
 
+                # Check if this is a preferred volunteer
+                if self.IsPreferredVolunteer == True: 
+
+                    # Increase the points
+                    self.ShiftPreferencePoints[s] = self.ShiftPreferencePoints[s] * 2  # This ensures preferential treatment for preferred volunteers
+
 class VolunteerGroup():
     # This class describes volunteer groups
 
@@ -51,6 +57,7 @@ class VolunteerGroup():
         self.ID_Number = 0
         self.GroupName = ''
         self.AssignedShift = ''
+        self.Volunteers = 0
 
 class Shift():
     # This class describes shifts
@@ -109,7 +116,7 @@ def ReadInGroupVolunteerData():
     # This function reads the preferences into a data frame
 
     # Specify the name of the csv file
-    CSV_Name = 'Prefilled Shifts.csv'
+    CSV_Name = 'Group Volunteers.csv'
 
     # Read in the data
     Data = pd.read_csv(CSV_Name)
@@ -127,12 +134,52 @@ def ReadInGroupVolunteerData():
         v.ID_Number = len(VolunteerGroups) + 1
         v.GroupName = Row['Group']
         v.AssignedShift = Row['Shift']
+        v.Volunteers = Row['Volunteers']
 
         # Add this volunteer group to the growing list
         VolunteerGroups.append(v)
 
     # Return the list of volunteer groups
     return VolunteerGroups
+
+def DisaggregateVolunteerGroups(GroupVolunteers, IndividualVolunteers):
+    # Inputs:
+    #   GroupVolunteers = a list of VolunteerGroup objects
+    #   IndividualVolunteers = a list of individual volunteer objects
+    # Outputs:
+    #   Creates a number of individual volunteers for each VolunteerGroup and adds these individuals to the list of individual volunteers
+
+    # Loop over the volunteer groups
+    for g in GroupVolunteers:
+
+        # Cap the number of volunteers in this group at the number required by their preferred shift
+        g.Volunteers = min(g.Volunteers, Shifts[g.AssignedShift].RequiredVolunteers)
+
+        # Create an individual volunteer object for each volunteer in this group
+        for VolunteerIndex in range(g.Volunteers):
+
+            # Instantiate a new individual volunteer
+            v = Volunteer()
+
+            # Assign an ID Number to the volunteer
+            v.ID_Number = len(IndividualVolunteers)
+
+            # Create a placeholder for the name of the volunteer
+            v.FirstName = g.GroupName
+            v.LastName = 'Volunteer %d' % (VolunteerIndex + 1)
+
+            # Specify them as a preferred volunteer
+            v.IsPreferredVolunteer = True
+
+            # Specify their first preference for a shift as the group's preference
+            v.PreferredShifts = [ g.AssignedShift ]
+
+            # Specify their other preferences as empty
+            for _ in range(4):
+                v.PreferredShifts.append('')
+
+            # Add this individual to the list of volunteers
+            IndividualVolunteers.append(v)
 
 def BuildShiftDictionary():
     # This function builds a dictionary of shift objects, where the dictionary keys are the shift names
@@ -284,6 +331,19 @@ def PrintSummaryStatistics(solver, Assignment, Shifts):
     ## Initialize the count of assignments realized
     AssignmentsRealized = 0
 
+    ## Initialize the count of preferred assignments realized
+    PreferredAssignmentsRealized = 0
+
+    ## Count the number of preferred volunteers
+    PreferredVolunteers = 0
+    for v in IndividualVolunteers:
+
+        # Check if this is a preferred volunteer
+        if v.IsPreferredVolunteer == True:
+
+            # Increment the count of preferred volunteers
+            PreferredVolunteers += 1
+
     ## Initialize the count of under-staffed shifts
     UnderStaffedShifts = 0
 
@@ -308,6 +368,12 @@ def PrintSummaryStatistics(solver, Assignment, Shifts):
                 # Increment the count of assignments for this particular shift
                 AssignmentsForShift += 1
 
+                # Check if this is a preferred volunteer
+                if v.IsPreferredVolunteer == True:
+
+                    # Increment the count of preferred assignments realized
+                    PreferredAssignmentsRealized += 1
+
         # Check if this shift is under-staffed
         if AssignmentsForShift < Shifts[s].RequiredVolunteers: # this shift is under-staffed
 
@@ -320,11 +386,20 @@ def PrintSummaryStatistics(solver, Assignment, Shifts):
     ## Calculate the fraction of under-staffed shifts
     FractionOfUnderStaffedShifts = UnderStaffedShifts / len(Shifts)
 
+    ## Calculate the fraction of volunteers assigned
+    FractionOfVolunteersAssigned = AssignmentsRealized / len(IndividualVolunteers)
+
+    ## Calculate the fraction of preferred volunteers assigned
+    FractionOfPreferredVolunteersAssigned = PreferredAssignmentsRealized / PreferredVolunteers
+
     ## Print the results
     print('\nStaffing requirements covered: %1.1f%%.' % (FractionOfRequirementsRealized * 100))
 
     print('Shifts fully covered: %1.1f%%.' % ((1- FractionOfUnderStaffedShifts) * 100))
 
+    print('Volunteers assigned to a shift: %1.1f%%.' % (FractionOfVolunteersAssigned * 100))
+
+    print('Preferred volunteers assigned to a shift: %1.1f%%.' % (FractionOfPreferredVolunteersAssigned * 100))
 
 def ExportVolunteerFocusedSchedule(solver, Assignment, Shifts):
     # This function exports a shift-centric CSV of the shift assignments
@@ -470,6 +545,9 @@ IndividualVolunteers = ReadInIndividualVolunteerData()
 
 # Read in the volunteer group data
 GroupVolunteers = ReadInGroupVolunteerData()
+
+# Break the volunteer groups down into individuals
+DisaggregateVolunteerGroups(GroupVolunteers, IndividualVolunteers)
 
 # Calculate the number of preference points each volunteer associates with each shift
 for v in IndividualVolunteers:
