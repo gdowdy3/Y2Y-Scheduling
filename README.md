@@ -7,6 +7,7 @@ To run this code, you need the following three (free!) pieces of software:
 1. Python 3.7
     - You can download it here: https://www.python.org/downloads/
     - Be careful not to install Python 3.8, because ortools (see below) is not currently compatible with Python 3.8.
+    - When installing, be sure you check the box indicating that python should be added to the system path.
 2. pandas
     - Assuming that you installed "pip" when installing Python, pandas is installed by simplying entering the following in the command line: `pip install pandas`
 3. ortools
