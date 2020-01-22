@@ -38,5 +38,5 @@ To use the code with your own input data, you just need to provide your own "Ind
 1. Using Excel, create your own "Individual Preferences.csv" and "Group Volunteers.csv" files, using the provided files as examples for the required format of the data.
    - These files must be named exactly "Individual Preferences.csv" and "Group Volunteeers.csv"!
    - Their formatting must be exactly the same as the provided sample files!
-2. Follow steps 3 - 6 in the previous section.
+2. Follow steps 4 - 6 in the previous section.
 
