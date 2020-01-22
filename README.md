@@ -12,23 +12,28 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
 
 
 ## Using the Code for the First Time
-1. Download the files from this repository.
-2. Work in progress
-   
+1. Create a directory on your computer to contain the code and the input/output files.  In what follows this directory will be called the "Working Directory".
+2. Download the files from this repository into the Working Directory.
+    - Click the green "Clone or download" button in the top left of the screen.
+    - Select "Download ZIP" in the drop-down menu.
+    - Save the zipped file to your Working Directory.
+2. Extract the zipped file to the Working Directory.  Doing so will create a sub-directory in your Working Directory called "Y2Y-Scheduling".
+3. Open up the command line console.
+    - You can do this by typing `cmd` + `Enter` in the "Type here to search" bar on Windows.
+4. Once you are in the console, navigate to the Y2Y-Scheduling directory
+    - You can do this by: 
+        - Navigating to the Y2Y-Scheduling directory in Windows Explorer 
+        - Copying the full path to the directory from the bar at the top of the screen
+        - Typing `cd <paste the path here>` in the console (do not include the <> arrows)
+        - Pressing `Enter`
+5. Enter `python ScheduleShifts.py` in the console.  This will run the code.
+6. The recommended schedule will be printed in the console, together with some summary statistics.
+7. The results are also stored more permanently in the "Shift-Focused Schedule.csv" and "Volunteer-Focused Schedule.csv" files in the Y2Y-Scheduling directory.
    
 ## Using the Code with Your Own Input Data
 To use the code with your own input data, you just need to provide your own "Individual Preferences.csv" and "Group Volunteers.csv" files.  To do so:
 1. Using Excel, create your own "Individual Preferences.csv" and "Group Volunteers.csv" files, using the provided files as examples for the required format of the data.
    - These files must be named exactly "Individual Preferences.csv" and "Group Volunteeers.csv"!
    - Their formatting must be exactly the same as the provided sample files!
-2. Save these files in the same directory as the "ScheduleShifts.py" script.  In what follows, this directory will be referred to as the "Working Directory". 
-3. Open up the command line console.
-    - You can do this by typing `cmd` + `Enter` in the "Type here to search" bar on Windows.
-4. Once you are in the console, navigate to the Working Directory
-    - You can do this by: 
-        - Navigating to the directory in Windows Explorer 
-        - Copying the path from the bar at the top of the screen
-        - Typing `cd <paste the path here>` in the console (do not include the <> arrows)
-        - Pressing `Enter`
-4. Enter `python ScheduleShifts.py` in the console.  This will run the code.
+2. Follow steps 3 - 6 in the previous section.
 
