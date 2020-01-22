@@ -35,7 +35,7 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
    
    
 ## Using the Code with Your Own Input Data
-To use the code with your own input data, you just need to provide your own "Individual Preferences.csv" and "Prefilled  Shifts.csv" files.  To do so:
+To use the code with your own input data, you just need to provide your own "Individual Preferences.csv" and "Group Volunteers.csv" files.  To do so:
 1. Using Excel, create your own "Individual Preferences.csv" and "Group Volunteers.csv" files, using the provided files as examples for the required format of the data.
    - These files must be named exactly "Individual Preferences.csv" and "Group Volunteeers.csv"!
    - Their formatting must be exactly the same as the provided sample files!
