@@ -47,6 +47,6 @@ To use the code with your own input data, you just need to provide your own "Ind
         - Navigating to the directory in Windows Explorer 
         - Copying the path from the bar at the top of the screen
         - Typing `cd <paste the path here>` in the console (do not include the <> arrows)
-        - Pressing enter
+        - Pressing `Enter`
 4. Enter `python ScheduleShifts.py` in the console.  This will run the code.
 
