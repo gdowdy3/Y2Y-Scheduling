@@ -1,18 +1,14 @@
 # Y2Y-Scheduling
 This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless Shelter.
 
+## Pre-requisites
+1. Python
+2. pandas
+3. ortools
+
+
 ## Using the Code for the First Time
-1.  Go to www.juliabox.com.  Everything that follows in the instructions below will be done there. Use GitHub (this website) only to consult these instructions.
-2.  Sign in via LinkedIn, GitHub, or Google.
-3.  Click the big blue **Launch** button.
-4.  Clone this repository from GitHub.
-    - In the top right corner of the screen, click the **New** button.  From the dropdown menu, click **Terminal**.  Doing so will open a new tab in your browser showing a black terminal screen.
-    - Enter the following three commands in the terminal (Tip: You can paste into the terminal by right-clicking and selecting *Paste*):
-        - `cd /home/jrun` This ensures that you are in the right directory in the terminal for cloning.
-        - `git clone https://github.com/gdowdy3/Y2Y-Scheduling.git` This clones the GitHub respository to JuliaBox.
-        - `cp -R /home/jrun/Y2Y-Scheduling /mnt/juliabox` This copies the cloned repository to another directory.
-    - Close the browser tab containing the terminal.
-    - Return to the **JuliaBox** tab.
+1. Download the files from this repository.
 5. Test run the code
     - Click on the **Y2Y-Scheduling** folder.
     - Click on the **Y2Y Shift Assignment.ipnyb** file.  It should open in a new tab in your browser.
@@ -40,13 +36,12 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
    
 ## Using the Code with Your Own Input Data
 To use the code with your own input data, you just need to provide your own "Individual Preferences.csv" and "Prefilled  Shifts.csv" files.  To do so:
-1. Using Excel, create your own "Individual Preferences.csv" and "Prefilled  Shifts.csv" files, using the provided files as examples for the required format of the data.
-   - These files must be named exactly "Individual Preferences.csv" and "Prefilled  Shifts.csv"!
+1. Using Excel, create your own "Individual Preferences.csv" and "Group Volunteers.csv" files, using the provided files as examples for the required format of the data.
+   - These files must be named exactly "Individual Preferences.csv" and "Group Volunteeers.csv"!
    - Their formatting must be exactly the same as the provided sample files!
-2. In JuliaBox, navigate to the Y2Y-Scheduling folder.
-3. Click the **Upload** button in the top right corner of the screen.
-4. In the pop-up window, find and select the first file you want to upload, and click the **Open** button.
-5. Repeat steps 3. and 4. for the second file.
-6. Click the blue **Upload** buttons next to each file.
-7. Overwrite any pre-existing files of the same.
-8. Run the code, as in step 4. of the previous section.
+2. Open up the command line console.
+    - You can do this by typing `cmd` + `Enter` in the "Type here to search" bar on Windows.
+3. In the console, navigate to the directory containing the .csv input files and the "ScheduleShifts.py" script.
+    - You can do this by navigating to the directory in Windows explorer, copying the path from the bar at the top of the screen, and then entering `cd <paste the path here>` in the console.
+4. Enter `python ScheduleShifts.py` in the console.  This will run the code.
+
