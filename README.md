@@ -1,5 +1,6 @@
 # Y2Y-Scheduling
 This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless Shelter.
+Questions should be directed to Garrett (gdowdy3@gmail.com)
 
 ## Pre-requisites
 1. Python 3.7
