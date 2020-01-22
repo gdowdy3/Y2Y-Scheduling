@@ -2,36 +2,18 @@
 This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless Shelter.
 
 ## Pre-requisites
-1. Python
+1. Python 3.7
+    - You can download it here: https://www.python.org/downloads/
+    - Be careful not to install Python 3.8, because ortools (see below) is not currently compatible with Python 3.8.
 2. pandas
+    - Assuming that you installed "pip" when installing Python, pandas is installed by simplying entering the following in the command line: `pip install pandas`
 3. ortools
+    - Similarly, assuming that you installed "pip" when installing Python, ortools is installed by simplying entering the following in the command line: `pip install ortools` 
 
 
 ## Using the Code for the First Time
 1. Download the files from this repository.
-5. Test run the code
-    - Click on the **Y2Y-Scheduling** folder.
-    - Click on the **Y2Y Shift Assignment.ipnyb** file.  It should open in a new tab in your browser.
-    - Follow the instructions there.
-    - If you see a "Dead Kernel" error message, do the following:
-        - Navigate back to the **Dashboard**.
-        - Click on the **Packages** button.
-        - Click on the **Yours** tab.
-        - Click the yellow **Reset** button.
-        - Return to the browser tab containing the code.
-        - Click on **Kernel** in the options bar at the top of the screen.
-        - In the drop-down menu, click **Restart Kernel & Clear All**.
-        - Try again to run the code.
-6. Inspect the output.
-    - If the code ran successfully, it should have produced two files in the Y2Y-Scheduling Folder:
-      - "Shift Focused Output.csv"
-      - "Volunteer Focused Output.csv"
-    - Save these files to your computer.
-      - Check the box next to the first file.
-      - Click the **Download** button that appears above when you do so.
-      - Save it to a convenient location.
-      - Repeat for the second file.
-   - Open the files using Excel and manipulate them as you see fit (e.g., resizing and renaming columns).
+2. Work in progress
    
    
 ## Using the Code with Your Own Input Data
