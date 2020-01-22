@@ -3,6 +3,7 @@ This code can be used to efficiently assign volunteers to shifts at Y2Y Homeless
 Questions should be directed to Garrett (gdowdy3@gmail.com)
 
 ## Pre-requisites
+To run this code, you need the following three (free!) pieces of software:
 1. Python 3.7
     - You can download it here: https://www.python.org/downloads/
     - Be careful not to install Python 3.8, because ortools (see below) is not currently compatible with Python 3.8.
