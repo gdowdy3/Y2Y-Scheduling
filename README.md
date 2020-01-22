@@ -39,9 +39,14 @@ To use the code with your own input data, you just need to provide your own "Ind
 1. Using Excel, create your own "Individual Preferences.csv" and "Group Volunteers.csv" files, using the provided files as examples for the required format of the data.
    - These files must be named exactly "Individual Preferences.csv" and "Group Volunteeers.csv"!
    - Their formatting must be exactly the same as the provided sample files!
-2. Open up the command line console.
+2. Save these files in the same directory as the "ScheduleShifts.py" script.  In what follows, this directory will be referred to as the "Working Directory". 
+3. Open up the command line console.
     - You can do this by typing `cmd` + `Enter` in the "Type here to search" bar on Windows.
-3. In the console, navigate to the directory containing the .csv input files and the "ScheduleShifts.py" script.
-    - You can do this by navigating to the directory in Windows explorer, copying the path from the bar at the top of the screen, and then entering `cd <paste the path here>` in the console.
+4. Once you are in the console, navigate to the Working Directory
+    - You can do this by: 
+        - Navigating to the directory in Windows Explorer 
+        - Copying the path from the bar at the top of the screen
+        - Typing `cd <paste the path here>` in the console (do not include the <> arrows)
+        - Pressing enter
 4. Enter `python ScheduleShifts.py` in the console.  This will run the code.
 
