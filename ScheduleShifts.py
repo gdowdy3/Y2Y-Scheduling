@@ -236,13 +236,14 @@ def BuildModel(IndividualVolunteers, Shifts):
     model = cp_model.CpModel()
 
     # Create the model variables
+    ## Primary decision variables
     Assignment = {}
     for v in IndividualVolunteers:
         for s in Shifts:
             Assignment[(v,s)] = model.NewBoolVar('Volunteer %s assigned to %s shift' % (v.ID_Number,s))
 
     # Create the constraints
-    ## Each shift has at most 5 volunteers assigned to it
+    ## Each shift has a maximum number of volunteers assigned to it
     for s in Shifts:
         model.Add(
             sum(Assignment[(v,s)] for v in IndividualVolunteers) <= Shifts[s].RequiredVolunteers
@@ -265,18 +266,23 @@ def BuildModel(IndividualVolunteers, Shifts):
     # Set the objective
     ## Define the weights of the various objectives
     Weight = {
-        'Maximize the number of covered shifts' : 1,
+        'Maximize the shift coverage' : 10,
         'Respect the volunteer preferences' : 1,
     }
+
+    ## Calculate the scalar required to make everything integer
+    Scalar = CalcObjectiveScalar(Shifts)  # This is multiplied in because the CP solver insists on the data being integer.
 
     ## Define the objective
     model.Maximize(
 
         # Maximize the number of covered shifts
-        Weight['Maximize the number of covered shifts'] *
+        Weight['Maximize the shift coverage'] *
         sum(
+            int(Scalar / Shifts[s].RequiredVolunteers) *
             sum(
-                Assignment[(v,s)] for v in IndividualVolunteers
+                Assignment[(v,s)] 
+                for v in IndividualVolunteers
             )
             for s in Shifts
         )
@@ -285,6 +291,7 @@ def BuildModel(IndividualVolunteers, Shifts):
 
         # Maximize the number of realized shift preference points
         Weight['Respect the volunteer preferences'] *
+        Scalar *
         sum(
             sum(
                 Assignment[(v,s)] * v.ShiftPreferencePoints[s]
@@ -296,6 +303,53 @@ def BuildModel(IndividualVolunteers, Shifts):
 
     # Return the model
     return (model, Assignment)
+
+def CalcObjectiveScalar(Shifts):
+
+    # Get the list of unique "Required Volunteer" numbers
+    UniqueList = GetUniqueListElements(
+        [Shifts[s].RequiredVolunteers for s in Shifts]
+    )
+
+    # Calculate the product of this list
+    p = ListProd(UniqueList)
+
+    # Round the product to an integer
+    Scalar = int(p)
+
+    print(Scalar)
+
+    # Return the scalar
+    return Scalar
+
+def ListProd(List):
+
+    # Initialize the product
+    p = 1
+
+    # Loop over the elements of the list
+    for e in List:
+
+        p = p * e
+
+    return p
+
+def GetUniqueListElements(List):
+
+    # Initialize the list of unique elements
+    UniqueList = []
+
+    # Loop over the list
+    for e in List:
+
+        # Check if it's in the Unique list
+        if not e in UniqueList: # it's not there
+
+            # Add it
+            UniqueList.append(e)
+    
+    # Return the unique list
+    return UniqueList
 
 def PrintShiftAssignments(solver, Assignment, Shifts):
     # This function prints out a shift-centric view of the shift assignments
