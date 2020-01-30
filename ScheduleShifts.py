@@ -317,8 +317,6 @@ def CalcObjectiveScalar(Shifts):
     # Round the product to an integer
     Scalar = int(p)
 
-    print(Scalar)
-
     # Return the scalar
     return Scalar
 
