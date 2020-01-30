@@ -198,7 +198,7 @@ def BuildShiftDictionary():
     # Create the list of periods
     Periods = [
         Period(Name='Breakfast', RequiredVolunteers=4),
-        Period(Name='Dinner', RequiredVolunteers=3),
+        Period(Name='Dinner', RequiredVolunteers=6),
         Period(Name='Evening', RequiredVolunteers=5),
         Period(Name='Overnight', RequiredVolunteers=2),
     ]
