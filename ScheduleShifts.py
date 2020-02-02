@@ -104,6 +104,7 @@ def ReadInIndividualVolunteerData():
             Row['3rd Preference'],
             Row['4th Preference'],
             Row['5th Preference'],
+            Row['6th Preference']
         ]
 
         # Add this volunteer to the growing list
@@ -197,10 +198,10 @@ def BuildShiftDictionary():
 
     # Create the list of periods
     Periods = [
-        Period(Name='Breakfast', RequiredVolunteers=4),
+        Period(Name='Breakfast', RequiredVolunteers=8),
         Period(Name='Dinner', RequiredVolunteers=6),
         Period(Name='Evening', RequiredVolunteers=5),
-        Period(Name='Overnight', RequiredVolunteers=2),
+        Period(Name='Overnight', RequiredVolunteers=4),
     ]
 
     # Initialize the dictionary of shifts
